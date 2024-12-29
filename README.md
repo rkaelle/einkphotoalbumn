@@ -1,22 +1,6 @@
 # e-Paper Photo Display
 
-![e-Paper Display Setup](images/eink.JPG)
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Components](#components)
-- [3D Printed Parts](#3d-printed-parts)
-- [Assembly](#assembly)
-- [Software Setup](#software-setup)
-  - [1. Prepare Your Raspberry Pi](#1-prepare-your-raspberry-pi)
-  - [2. Install Dependencies](#2-install-dependencies)
-  - [3. Configure the Script](#3-configure-the-script)
-  - [4. Upload Firebase Configuration](#4-upload-firebase-configuration)
-  - [5. Set Up Script to Run on Startup](#5-set-up-script-to-run-on-startup)
-- [Running the Project](#running-the-project)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+<img src="images/eink.JPG" alt="e-Paper Display Setup" width="600"/>
 
 ## Introduction
 
@@ -208,7 +192,7 @@ To ensure the script runs automatically after the Raspberry Pi boots and connect
 1. **Create a Service File:**
 
     ```bash
-    sudo nano /etc/systemd/system/grammie_poppie.service
+    sudo nano /etc/systemd/system/eink.service
     ```
 
 2. **Add the Following Content:**
@@ -220,7 +204,7 @@ To ensure the script runs automatically after the Raspberry Pi boots and connect
     Wants=network-online.target
 
     [Service]
-    ExecStart=/usr/bin/python3 /home/pi/your-repo-name/grammie_poppie.py
+    ExecStart=/usr/bin/python3 /home/pi/your-repo-name/eink.py
     WorkingDirectory=/home/pi/your-repo-name
     StandardOutput=inherit
     StandardError=inherit
@@ -239,14 +223,14 @@ To ensure the script runs automatically after the Raspberry Pi boots and connect
 
     ```bash
     sudo systemctl daemon-reload
-    sudo systemctl enable grammie_poppie.service
-    sudo systemctl start grammie_poppie.service
+    sudo systemctl enable eink.service
+    sudo systemctl start eink.service
     ```
 
 4. **Check Service Status:**
 
     ```bash
-    sudo systemctl status grammie_poppie.service
+    sudo systemctl status eink.service
     ```
 
     Ensure that the service is active and running without errors.
@@ -303,7 +287,7 @@ Once assembled and configured, the e-Paper display will automatically start disp
     - Check the status of the systemd service using:
 
     ```bash
-    sudo systemctl status grammie_poppie.service
+    sudo systemctl status eink.service
     ```
 
     - Review logs for any errors and ensure all paths in the service file are correct.
