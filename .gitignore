@@ -1,0 +1,12 @@
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Ignore the specific Python script
+grammie_poppie.py
